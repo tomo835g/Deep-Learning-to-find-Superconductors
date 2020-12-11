@@ -1,2 +1,92 @@
-# Deep-Learning-to-find-Superconductors
-Deep-Learning-to-find-Superconductors
+# Introduction
+
+# Condition
+The data and the codes can be used under the condition that you cite the following two papers. Also see Licence.
+
+```
+@article{Konno2018DeepLM,
+  title={Deep Learning Model for Finding New Superconductors},
+  author={Tomohiko Konno and H. Kurokawa and F. Nabeshima and Y. Sakishita and Ryo Ogawa and I. Hosako and A. Maeda},
+  journal={ArXiv},
+  year={2018},
+  volume={abs/1812.01995},
+  }
+```
+
+# The list for candidate materials for superconductors with comment
+
+`` go_open_candidate_materials_list.xlsx``
+
+# Data handling
+The data handling is explained in detail in the supplementary materials of our paper.
+
+# Data directories
+The data as of 2018, 2009, and 2007 are under `./2018`, `./2009`, and `./2007`, respectively.
+The data and the codes are separate according to the years. You must enter the directories.
+# Test data for identifying superconductors.
+We collected the data of superconductors and non-superconductors from Ref. by Hosono et al., and entered missing values by investigating each original paper cited in the reference. The data becomes the test data for identifying superconductors and is in` ./[year]/first_data/ first_concat_list_dup_over_training_removed.csv `for each year. The [year] is for 2018, 2009, and 2007. The data itself had been collected since 2009. From this point, to use the data of 2009 is the best to test the model. For each year, the data in the test data that overlap the data of SuperCon and COD are removed. This is what is meant by the year. For years other than 2009, these data are used to exclude wrong models.
+
+# The data from COD for "garbage-in"
+The data of inorganic materials from [COD](http://www.crystallography.net/cod/) for the method of "garbage-in" is in ` ./[year]/cod_data/chemical_formula_sum_overlap_removed_2.csv` The [year] is for 2018, 2009, and 2007. The data reported until the [year] is collected for each [year].
+
+# The data of superconductors
+Because National Institute for Materials Science (NIMS) prohibits us from opening the data of superconductors for you, instead of opening, we provide the code for preprocessing the data from the database of superconductors (SuperCon).
+If you use the code, you can get the preprocessed data of superconductors.
+## How to prepare the data of superconductors 
+First of all, you must get the data of superconductors from SuperCon. 
+The file name must be `OXIDEMETALLICSearchR_1_[year].csv`, where year is 2009 or 2007.
+An example is `OXIDEMETALLICSearchR_1_2009.csv`, if the year is 2009. Or if the data year is 2018, the file name must be `OXIDEMETALLICSearchR_1.csv`. 
+
+
+Caution ! If you want to take data before 2009 from SuperCon, you must search for the data putting 'before 2008'! If you put 'before 2009', the data contains the data of 2009 in SuperCon.
+
+The data must contain the rows of ['element', 'str3', 'Tc', 'tcn'].
+The 'element' means the name of material like H<sub>2</sub>O contrary to the meaning of the term of 'element'.
+
+You must delete two Fe-based materials from the data of 2007, if you want to use the data of 2007.
+
+# How to make the reading periodic table (rpt) type data 
+## for superconductors
+1. `python preprocessing_open.py --year_until 2007, 2009, or -1 --fill 0`
+ year_until==-1 means the year_until is 2018.  -1 is default, which means 2018.
+2. `python matter_data_to_formats_open.py --data_name training_data_not_fill`
+   
+Then you must have several data formats in `./made_data/`
+The filename of the data reading periodic table type is `./made_data/period_table_as_rpt.npy`
+The list of Tc is in `./made_data/tc_list` in the same order.
+`./made_data/super_conductor_family_index` has indexes 'others', 'Fe', or 'CuO' in the same order as the materials in periodic_table_as_rpt.npy and so forth. The 'others' basically mean conventional superconductors, 'Fe' and 'CuO' mean Fe-based and CuO-based superconductors respectively.
+
+## Test data for identifying superconductors collected by Hosono et al.
+
+`python matter_data_to_formats.py --data_name 'first' --with_Fe 1`
+If --with_Fe 1, then the data contains the materials with Fe. If --with_Fe 0, then the materials that contain Fe are removed. The default is --with_Fe 1. The data in the form of reading periodic table are made in `./first_data/made_data/period_table_as_rpt.npy`.
+
+## for COD
+`python matter_data_to_formats.py --data_name 'cod'` 
+The data of COD in the form of reading periodic table are made in `./cod_data/made_data/period_table_as_rpt.npy`
+
+
+# Alternative way to make reading periodic table data format
+You can use class and methods in ```chemical_formula_to_reading_periodic_table.py``` for each chemical formula. The example to use is written in the file. The class is useful to use our methods to your own problems.
+
+The code transforms chemical formula like H<sub>2</sub>O into **reading periodic table type data format**.
+In the code, formula or chemical formula is like H<sub>2</sub>O, periodic_table is the data form of reading periodic table, the shape of which is (4,7,32), and dict or dict_form is like {"H":2,"O":1}.
+
+An example
+```
+test_formula = 'H2He5'
+reading_periodic_table = ReadingPeriodicTable(formula=test_formula)
+reading_periodic_table_form_data = reading_periodic_table.formula_to_periodic_table()
+print(reading_periodic_table_form_data)
+>> must print 4*7*32 data.
+formula_dict_form=reading_periodic_table.from_periodic_table_form_to_dict_form(reading_periodic_table_form_data)
+print(formula_dict_form)
+>> must print {'H':2,'He':5}
+```
+
+<!---　ここまで　-->
+
+# The code for model
+
+### Requirement
+torch,keras, numpy, pandas,pymatgen

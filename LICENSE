@@ -19,3 +19,16 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+Additional Special Condition
+The data and the codes can be used under the condition that you cite the following two papers. Also see Licence.
+
+```
+@article{Konno2018DeepLM,
+  title={Deep Learning Model for Finding New Superconductors},
+  author={Tomohiko Konno and H. Kurokawa and F. Nabeshima and Y. Sakishita and Ryo Ogawa and I. Hosako and A. Maeda},
+  journal={ArXiv},
+  year={2018},
+  volume={abs/1812.01995},
+  }
+```
