@@ -41,7 +41,7 @@ If you use the code, you can get the preprocessed data of superconductors and th
 ## How to prepare the data of superconductors 
 First of all, you must get the data of superconductors from SuperCon. 
 The file name must be `OXIDEMETALLICSearchR_1_[year].csv`, where year is 2009 or 2007.
-An example is `OXIDEMETALLICSearchR_1_2009.csv`, if the year is 2009. Or if the data year is 2018, the file name must be `OXIDEMETALLICSearchR_1.csv`. 
+An example is `OXIDEMETALLICSearchR_1_2009.csv`, if the year is 2009. Or if the data year is 2018, the file name must be `OXIDEMETALLICSearchR_1.csv`.  We recommend to save the data in separate directories according to the year in order not to overwrite.
 
 
 *Caution !*
@@ -54,6 +54,7 @@ The 'element' means the name of material like H<sub>2</sub>O contrary to the mea
 You must delete two Fe-based materials, LaFePO and LaFePFO, from the data of 2007, if you want to use the data of 2007, because the two Fe-based materials are similar to Fe-based high-Tc superconductors. See our paper in detail to get more explanation.
 
 # How to make the reading periodic table (rpt) type data 
+You must enter each [year] directory. The codes are under each [year] directory.
 ## For superconductors
 1. `python preprocessing_open.py --year_until 2007, 2009, or -1 --fill 0`
  year_until==-1 means the year_until is 2018.  -1 is default, which means 2018.
@@ -90,7 +91,7 @@ print(formula_dict_form)
 >> must print {'H':2,'He':5}
 ```
 # The code for model
-The model for reading periodic table is the class *ModelReadingPeriodicTable* in `networks_go_open.py`
+The model for reading periodic table is the class *ModelReadingPeriodicTable* in `networks_go_open.py` in each [year] directory.
 
 ### Requirement
 torch,keras, numpy, pandas,pymatgen
