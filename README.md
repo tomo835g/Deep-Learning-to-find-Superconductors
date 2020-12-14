@@ -93,5 +93,7 @@ print(formula_dict_form)
 # The code for model
 The model for reading periodic table is the class *ModelReadingPeriodicTable* in `networks_go_open.py` in each [year] directory.
 
+Due to the scarce human resource, we can only provide above codes.
+
 ### Requirement
 torch,keras, numpy, pandas,pymatgen
