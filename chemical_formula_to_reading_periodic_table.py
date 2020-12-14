@@ -6,7 +6,7 @@ import os
 from pymatgen import Composition
 
 
-class ReadingPeriodicTable():
+class TransformReadingPeriodicTable():
     def __init__(self, formula=None, rel_cif_file_path='write cif file path', data_dir='../data'):
         self.formula = formula
         self.allowed_elements_list = ['H', 'He', 'Li', 'Be', 'B', 'C', 'N', 'O', 'F', 'Ne', 'Na', 'Mg', 'Al', 'Si', 'P', 'S', 'Cl', 'Ar', 'K', 'Ca', 'Sc', 'Ti', 'V', 'Cr', 'Mn', 'Fe', 'Co', 'Ni', 'Cu', 'Zn', 'Ga', 'Ge', 'As', 'Se', 'Br', 'Kr', 'Rb', 'Sr', 'Y', 'Zr', 'Nb', 'Mo', 'Tc', 'Ru', 'Rh', 'Pd', 'Ag', 'Cd', 'In', 'Sn', 'Sb', 'Te', 'I', 'Xe', 'Cs', 'Ba', 'La',
@@ -133,8 +133,8 @@ class ReadingPeriodicTable():
 
 '''here is an example'''
 test_formula = 'H2He5'
-reading_periodic_table = ReadingPeriodicTable(formula=test_formula)
+reading_periodic_table = TransformReadingPeriodicTable(formula=test_formula)
 reading_periodic_table_form_data = reading_periodic_table.formula_to_periodic_table()
 print(reading_periodic_table_form_data)
-formula_dict_form=reading_periodic_table.from_periodic_table_form_to_dict_form(reading_periodic_table_form_data)
+formula_dict_form = reading_periodic_table.from_periodic_table_form_to_dict_form(reading_periodic_table_form_data)
 print(formula_dict_form)
