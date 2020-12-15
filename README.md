@@ -1,6 +1,6 @@
 # Introduction
 
-The data and the code for ***''Deep Learning Model for Finding New Superconductors'' by Tomohiko Konno, Hodaka Kurokawa, Fuyuki Nabeshima, Yuki Sakishita, Ryo Ogawa, Iwao Hosako, and Atsutaka Maeda, Physical Review B (2020)***
+The data and the code for ***''Deep Learning Model for Finding New Superconductors'' by Tomohiko Konno, Hodaka Kurokawa, Fuyuki Nabeshima, Yuki Sakishita, Ryo Ogawa, Iwao Hosako, and Atsutaka Maeda, Physical Review B (forthcoming)***
 
 The paper is [open access (forthcoming)](), and Arxiv version is found [here](https://arxiv.org/abs/1812.01995).
 
