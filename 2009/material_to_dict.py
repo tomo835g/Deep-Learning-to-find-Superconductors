@@ -202,6 +202,7 @@ class Material_to_dict():
         '''
 
 
+'''
 test = 'Y1Ba2Cu2.7In0.3O6.9'
 test = 'Y1Ba2Cu2.82Fe0.18O6.895'
 mtc = Material_to_dict()
@@ -209,3 +210,4 @@ correct_formula = mtc.correct_formula(test)
 print(correct_formula)
 dict_formula = mtc.formula_to_dict(test)
 print(dict_formula)
+'''
