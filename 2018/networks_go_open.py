@@ -6,9 +6,6 @@ import torch
 from torch.autograd import Variable
 from torch.utils.data import Dataset, DataLoader, TensorDataset
 #from torchvision import transforms, utils
-import time
-from utils import Periodic_Conv2D, Periodic_shift_Conv2D
-#from utils import utils
 
 
 class BasicBlock_1(nn.Module):  # 2-layers
