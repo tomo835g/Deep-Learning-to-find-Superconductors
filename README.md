@@ -22,6 +22,7 @@ The data and the codes can be used under the condition that you cite the followi
 The candidate materials list is found in the following file.
 `` go_open_candidate_materials_list.xlsx``
 
+The column `num_elements` denotes the number of elements the material has, `O_contained` denotes whether the material contains oxide or nor, and so forth.
 # Data handling
 The data handling is explained in detail in the supplementary materials of our paper.
 
