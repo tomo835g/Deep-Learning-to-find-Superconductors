@@ -1,21 +1,30 @@
 # Introduction
 
-The data and the code for ***''Deep Learning Model for Finding New Superconductors'' by Tomohiko Konno, Hodaka Kurokawa, Fuyuki Nabeshima, Yuki Sakishita, Ryo Ogawa, Iwao Hosako, and Atsutaka Maeda, Physical Review B (forthcoming)***
+The data and the code for ***''Deep Learning Model for Finding New Superconductors'' by Tomohiko Konno, Hodaka Kurokawa, Fuyuki Nabeshima, Yuki Sakishita, Ryo Ogawa, Iwao Hosako, and Atsutaka Maeda, [Physical Review B](https://doi.org/10.1103/PhysRevB.103.014509)
 
-The paper is [open access (forthcoming)](), and Arxiv version is found [here](https://arxiv.org/abs/1812.01995).
+The paper is [open access](https://doi.org/10.1103/PhysRevB.103.014509), and Arxiv version is found [here](https://arxiv.org/abs/1812.01995).
 
 
 # Condition
 The data and the codes can be used under the condition that you cite the following two papers. Also see Licence.
 
 ```
-@article{Konno2018DeepLM,
-  title={Deep Learning Model for Finding New Superconductors},
-  author={Tomohiko Konno and H. Kurokawa and F. Nabeshima and Y. Sakishita and Ryo Ogawa and I. Hosako and A. Maeda},
-  journal={ArXiv},
-  year={2018},
-  volume={abs/1812.01995},
-  }
+%\cite{PhysRevB.103.014509}
+@article{PhysRevB.103.014509,
+  title = {Deep learning model for finding new superconductors},
+  author = {Konno, Tomohiko and Kurokawa, Hodaka and Nabeshima, Fuyuki and Sakishita, Yuki and Ogawa, Ryo and Hosako, Iwao and Maeda, Atsutaka},
+  journal = {Phys. Rev. B},
+  volume = {103},
+  issue = {1},
+  pages = {014509},
+  numpages = {6},
+  year = {2021},
+  month = {Jan},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevB.103.014509},
+  url = {https://link.aps.org/doi/10.1103/PhysRevB.103.014509}
+}
+
 ```
 
 # The list for candidate materials for superconductors with our comment
