@@ -4,6 +4,8 @@ The data and the code for ***''Deep Learning Model for Finding New Superconducto
 
 The paper is [open access](https://doi.org/10.1103/PhysRevB.103.014509), and Arxiv version is found [here](https://arxiv.org/abs/1812.01995).
 
+A very good review in Japanese is found [here](https://ai-scholar.tech/articles/treatise/nict-ai-366).
+
 
 # Condition
 The data and the codes can be used under the condition that you cite the following two papers. Also see Licence.
